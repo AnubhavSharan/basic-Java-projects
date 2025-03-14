@@ -30,9 +30,13 @@ public class BankingSystem {
         System.out.println("Your current balance is " + this.amount);
     }
     public void withdraw(int num){
-        this.amount-=num;
-        System.out.println("Amount Successfully withdrawn");
-        System.out.println("Your current balance is " + this.amount);
+        if((amount-=num)<0){
+            System.out.print("Insufficient fund");
+        }else{
+            this.amount-=num;
+            System.out.println("Amount Successfully withdrawn");
+            System.out.println("Your current balance is " + this.amount);
+        }
     }
 
     public static void main(String[] args){
